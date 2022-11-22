@@ -45,6 +45,16 @@ header {
   height: 80vh;
 }
 
+.top_circleView {
+  width: 35px;
+  height: 35px;
+}
+
+.hertIcon {
+  margin-left: 10px;
+  margin-top: 4px;
+}
+
 footer {
   font-weight: 400;
   padding: 1rem 0;
