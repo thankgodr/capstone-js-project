@@ -13,3 +13,11 @@ import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
+
+/** Import custom css */
+import '../css/style.css';
+
+import MealController from './modules/meal_controller';
+
+const mealController = new MealController();
+mealController.printAllMeals(document.getElementById('meals'));
