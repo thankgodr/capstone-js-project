@@ -1,3 +1,57 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-nav {
+  display: flex;
+  font-size: 25px;
+  position: relative;
+}
+
+.right-nav input[type=text] {
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.middle {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  list-style: none;
+}
+
+header {
+  display: flex;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.food-body {
+  height: 80vh;
+}
+
+footer {
+  font-weight: 400;
+  padding: 1rem 0;
+  display: flex;
+  height: 72px;
+  font-size: 20px;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
 }
