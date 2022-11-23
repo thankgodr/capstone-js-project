@@ -18,6 +18,26 @@ import '@fortawesome/fontawesome-free/js/brands';
 import '../css/style.css';
 
 import MealController from './modules/meal_controller';
+import CreateGameRequest from './modules/network/requests/create_game_request';
+import GetMeals from './modules/network/requests/get_meal_request';
 
 const mealController = new MealController();
-mealController.printAllMeals(document.getElementById('meals'));
+let game_id = localStorage.getItem("involvementApiGameId")
+
+//Create gameid if not already created
+if(game_id == undefined){
+    const createGameRequest = new CreateGameRequest()
+    createGameRequest.create().then((gameId)=> {
+        localStorage.setItem("involvementApiGameId", gameId)
+    })
+}
+
+new GetMeals().fetch().then(result => {
+    const mealController = new MealController(result.meals);
+    mealController.getLikes(() => {
+        mealController.printAllMeals(document.getElementById('meals'));
+    })
+    
+})
+
+
