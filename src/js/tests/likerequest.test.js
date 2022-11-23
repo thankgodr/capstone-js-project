@@ -1,5 +1,7 @@
 import CreateGameRequest from "../modules/network/requests/create_game_request"
 import LikesRequest from "../modules/network/requests/likes_request"
+import "isomorphic-fetch"
+
 
 // Mockng local storage
 global.localStorage = {

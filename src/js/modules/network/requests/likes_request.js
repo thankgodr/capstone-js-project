@@ -4,7 +4,7 @@ export default class LikesRequest {
     #networRequest;
     #path;
 
-    constructor(gammeID) {
+    constructor(gammeID = "9JcQwe8YeiV9ciPMfpK9") {
       this.#networRequest = new NetWorkRequest();
       this.#path = `apps/${gammeID}/likes`;
     }
@@ -13,10 +13,12 @@ export default class LikesRequest {
       return this.#networRequest.get(this.#path, true);
     }
 
-    postLikes = (mealID) => {
+    postLikes = (mealID, callback = () => {}) => {
         const postBody = {
             "item_id": mealID
         }
-        return this.#networRequest.post(this.#path, postBody)
+        const result = this.#networRequest.post(this.#path, postBody)
+        callback();
+        return result
     }
 }
