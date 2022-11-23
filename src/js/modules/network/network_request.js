@@ -24,8 +24,8 @@ export default class NetWorkRequest {
 
   getBase = async (path, returnJson = false) => {
     const requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
+      method: 'GET',
+      redirect: 'follow',
     };
     const response = await fetch(this.endPoint + path, requestOptions);
     const json = returnJson ? await response.json() : await response.text();

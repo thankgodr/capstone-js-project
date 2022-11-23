@@ -1,22 +1,18 @@
-import LikesRequest from "./network/requests/likes_request";
+import LikesRequest from './network/requests/likes_request';
 
 /**
  * @author ThankGod Richard
  * @desc This class is use to manipulate the dorm for meal listing
  */
 export default class MealController {
-  
   constructor(meals = [1, 2, 4, 5, 6, 3, 4, 5, 2, 3, 42, 32, 23, 32]) {
     this.meals = meals;
-    this.likesArray = []
+    this.likesArray = [];
     this.likeRequest = new LikesRequest();
   }
 
-
-  
-
-  printAllMeals(rootView = document.body){
-    rootView.innerHTML = ""
+  printAllMeals(rootView = document.body) {
+    rootView.innerHTML = '';
     const containerView = document.createElement('div');
     containerView.className = 'container py-5';
     const rowView = document.createElement('div');
@@ -76,17 +72,16 @@ export default class MealController {
       mealikesHolder.className = 'col-3 d-flex flex-row-reverse';
 
       const likeTextNode = document.createElement('p');
-      likeTextNode.className = "liketext"
+      likeTextNode.className = 'liketext';
       likeTextNode.appendChild(document.createTextNode('Likes'));
-      likeTextNode.addEventListener("click",(event) =>{
-          event.preventDefault()
-          this.likeRequest.postLikes(meal.idMeal, () => {
-              this.getLikes(() => {
-                document.getElementById(meal.idMeal).innerHTML = `${this.#findLikes(meal.idMeal)["likes"]+1} likes`
-              })
-          })
-      })
-
+      likeTextNode.addEventListener('click', (event) => {
+        event.preventDefault();
+        this.likeRequest.postLikes(meal.idMeal, () => {
+          this.getLikes(() => {
+            document.getElementById(meal.idMeal).innerHTML = `${this.#findLikes(meal.idMeal).likes + 1} likes`;
+          });
+        });
+      });
 
       const likesIconNode = document.createElement('i');
       likesIconNode.className = 'fas fa-heart hertIcon';
@@ -101,8 +96,8 @@ export default class MealController {
       const counterContainer = document.createElement('div');
       counterContainer.className = 'col-12 d-flex flex-row-reverse';
       const pCounterTag = document.createElement('p');
-      pCounterTag.setAttribute("id", meal.idMeal)
-      pCounterTag.appendChild(document.createTextNode(`${this.#findLikes(meal.idMeal)["likes"]} likes`));
+      pCounterTag.setAttribute('id', meal.idMeal);
+      pCounterTag.appendChild(document.createTextNode(`${this.#findLikes(meal.idMeal).likes} likes`));
       counterContainer.appendChild(pCounterTag);
       mealCounterHolder.appendChild(counterContainer);
 
@@ -134,19 +129,18 @@ export default class MealController {
     rootView.appendChild(containerView);
   }
 
-  getLikes(callBack= () => {}){
+  getLikes(callBack = () => {}) {
     this.likeRequest.getLikes().then((result) => {
-      this.likesArray = result
-      callBack()
-    })
+      this.likesArray = result;
+      callBack();
+    });
   }
 
-  #findLikes(id){
-    const curr = this.likesArray.find(o => o.item_id === id );
-    if(curr == undefined){
-      return { likes: 0}
-    }else{
-      return curr
+  #findLikes(id) {
+    const curr = this.likesArray.find((o) => o.item_id === id);
+    if (curr === undefined) {
+      return { likes: 0 };
     }
+    return curr;
   }
 }
