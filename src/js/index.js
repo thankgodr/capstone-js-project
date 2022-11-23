@@ -33,6 +33,9 @@ if(game_id == undefined){
 }
 
 new GetMeals().fetch().then(result => {
+    //Update the homePage Counter
+    document.getElementById("counter").innerHTML = `(${result.meals.length})`
+
     const mealController = new MealController(result.meals);
     mealController.getLikes(() => {
         mealController.printAllMeals(document.getElementById('meals'));
