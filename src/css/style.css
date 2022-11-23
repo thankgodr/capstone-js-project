@@ -164,3 +164,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+.liketext:hover {
+  cursor: pointer;
+}

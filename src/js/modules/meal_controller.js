@@ -1,3 +1,6 @@
+import LikesRequest from './network/requests/likes_request';
+import displayPopup from './popup';
+
 /**
  * @author ThankGod Richard
  * @desc This class is use to manipulate the dorm for meal listing
@@ -5,9 +8,12 @@
 export default class MealController {
   constructor(meals = [1, 2, 4, 5, 6, 3, 4, 5, 2, 3, 42, 32, 23, 32]) {
     this.meals = meals;
+    this.likesArray = [];
+    this.likeRequest = new LikesRequest();
   }
 
   printAllMeals(rootView = document.body) {
+    rootView.innerHTML = '';
     const containerView = document.createElement('div');
     containerView.className = 'container py-5';
     const rowView = document.createElement('div');
@@ -44,7 +50,7 @@ export default class MealController {
       /** Meals Image */
       const mealImageTag = document.createElement('img');
       mealImageTag.className = 'card-img-top';
-      mealImageTag.setAttribute('src', 'https://media.istockphoto.com/id/1295633127/photo/grilled-chicken-meat-and-fresh-vegetable-salad-of-tomato-avocado-lettuce-and-spinach-healthy.jpg?s=612x612&w=0&k=20&c=Qa3tiqUCO4VpVMQDXLXG47znCmHr_ZIdoynViJ8kW0E=');
+      mealImageTag.setAttribute('src', meal.strMealThumb);
       mealImageTag.setAttribute('alt', 'mealName');
       singleMealCardView.append(mealImageTag);
       /** End of Meals Image */
@@ -55,19 +61,28 @@ export default class MealController {
 
       // meal Name
       const mealNameHolder = document.createElement('div');
-      mealNameHolder.className = 'col-6';
+      mealNameHolder.className = 'col-9';
 
       const mealNameTagNode = document.createElement('p');
-      mealNameTagNode.appendChild(document.createTextNode(`Meal ${meal}`));
+      mealNameTagNode.appendChild(document.createTextNode(meal.strMeal));
       mealNameHolder.append(mealNameTagNode);
       nameLikesDiv.appendChild(mealNameHolder);
 
       // Meal Likes
       const mealikesHolder = document.createElement('div');
-      mealikesHolder.className = 'col-6 d-flex flex-row-reverse';
+      mealikesHolder.className = 'col-3 d-flex flex-row-reverse';
 
       const likeTextNode = document.createElement('p');
+      likeTextNode.className = 'liketext';
       likeTextNode.appendChild(document.createTextNode('Likes'));
+      likeTextNode.addEventListener('click', (event) => {
+        event.preventDefault();
+        this.likeRequest.postLikes(meal.idMeal, () => {
+          this.getLikes(() => {
+            document.getElementById(meal.idMeal).innerHTML = `${this.#findLikes(meal.idMeal).likes + 1} likes`;
+          });
+        });
+      });
 
       const likesIconNode = document.createElement('i');
       likesIconNode.className = 'fas fa-heart hertIcon';
@@ -82,7 +97,8 @@ export default class MealController {
       const counterContainer = document.createElement('div');
       counterContainer.className = 'col-12 d-flex flex-row-reverse';
       const pCounterTag = document.createElement('p');
-      pCounterTag.appendChild(document.createTextNode('5 likes'));
+      pCounterTag.setAttribute('id', meal.idMeal);
+      pCounterTag.appendChild(document.createTextNode(`${this.#findLikes(meal.idMeal).likes} likes`));
       counterContainer.appendChild(pCounterTag);
       mealCounterHolder.appendChild(counterContainer);
 
@@ -96,21 +112,13 @@ export default class MealController {
       butttonHolderDiv.className = 'row';
 
       const commentBtnHlder = document.createElement('div');
-      commentBtnHlder.className = 'col-12 text-center';
+      commentBtnHlder.className = 'col-12 text-center mb-4';
       const commentBtn = document.createElement('button');
       commentBtn.appendChild(document.createTextNode('Comment'));
       commentBtn.className = 'btn btn-primary comments-btn';
+      commentBtn.setAttribute('id', meal.idMeal);
       commentBtnHlder.appendChild(commentBtn);
       butttonHolderDiv.appendChild(commentBtnHlder);
-
-      const reservationBtnHlder = document.createElement('div');
-      reservationBtnHlder.className = 'col-12 text-center mt-2 mb-2';
-      const reservationBtn = document.createElement('button');
-      reservationBtn.appendChild(document.createTextNode('Reservations'));
-      reservationBtn.className = 'btn btn-primary';
-      reservationBtnHlder.appendChild(reservationBtn);
-      butttonHolderDiv.appendChild(reservationBtnHlder);
-
       singleMealCardView.appendChild(butttonHolderDiv);
       /** ********************End of Meal Buttons  **************** */
 
@@ -121,4 +129,28 @@ export default class MealController {
     containerView.appendChild(rowView);
     rootView.appendChild(containerView);
   }
+
+  getLikes(callBack = () => {}) {
+    this.likeRequest.getLikes().then((result) => {
+      this.likesArray = result;
+      callBack();
+    });
+  }
+
+  #findLikes(id) {
+    const curr = this.likesArray.find((o) => o.item_id === id);
+    if (curr === undefined) {
+      return { likes: 0 };
+    }
+    return curr;
+  }
+
+  getComments(id) {
+    displayPopup();
+  }
 }
+
+// displayPopup();
+// const commentBt = document.querySelectorAll('.comments-btn');
+// console.log(commentBt)
+// commentBt.addEventListener('click', displayPopup);

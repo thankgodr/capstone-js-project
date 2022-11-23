@@ -18,10 +18,33 @@ import '@fortawesome/fontawesome-free/js/brands';
 import '../css/style.css';
 
 import MealController from './modules/meal_controller';
-import displayPopup from '../js/modules/popup';
+import CreateGameRequest from './modules/network/requests/create_game_request';
+import GetMeals from './modules/network/requests/get_meal_request';
+import displayPopup from './modules/popup';
 
-const mealController = new MealController();
-mealController.printAllMeals(document.getElementById('meals'));
+const gameId = localStorage.getItem('involvementApiGameId');
+
+// Create gameid if not already created
+if (gameId === undefined) {
+  const createGameRequest = new CreateGameRequest();
+  createGameRequest.create().then((gameId) => {
+    localStorage.setItem('involvementApiGameId', gameId);
+  });
+}
+
+new GetMeals().fetch().then((result) => {
+  // Update the homePage Counter
+  document.getElementById('counter').innerHTML = `(${result.meals.length})`;
+
+  const mealController = new MealController(result.meals);
+  mealController.getLikes(() => {
+    mealController.printAllMeals(document.getElementById('meals'));
+  });
+  displayPopup(() => {
+    
+  })
+});
+
 const getData = () => {
     displayPopup();
   };
@@ -31,3 +54,4 @@ const getData = () => {
   };
   
   display();
+  
