@@ -1,6 +1,9 @@
-export default class CounterController{
-    countChildren(parent = document, className = ""){
-       const allChildren =  parent.getElementsByClassName(className)
-        return allChildren.length
-    }
+export default class CounterController {
+   lastCount
+
+   countChildren(parent = document, className = '') {
+     const allChildren = parent.getElementsByClassName(className);
+     this.lastCount = allChildren.length;
+     return this.lastCount;
+   }
 }

@@ -33,16 +33,13 @@ if (gameId === undefined) {
 }
 
 new GetMeals().fetch().then((result) => {
-  
-
   const mealController = new MealController(result.meals);
   mealController.getLikes(() => {
-    //Print the meals to screen
+    // Print the meals to screen
     mealController.printAllMeals(document.getElementById('meals'));
 
     // Update the homePage Counter
-    const countController = new CounterController()
-    document.getElementById('counter').innerHTML = `(${countController.countChildren(document.getElementById('meals'), "card")})`;
-
+    const countController = new CounterController();
+    document.getElementById('counter').innerHTML = `(${countController.countChildren(document.getElementById('meals'), 'card')})`;
   });
 });
