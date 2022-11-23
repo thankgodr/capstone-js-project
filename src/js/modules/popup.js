@@ -1,5 +1,4 @@
 import { postComment, getComments } from './comments.js';
-import {MealController} from './meal_controller';
 
 const modal = document.querySelector('.comment-modal');
 const modalImg = document.querySelector('.popup-image img');
@@ -31,25 +30,21 @@ const createForm = (id) => {
 
 const displayPopup = () => {
   const commentBtns = document.querySelectorAll('.comments-btn');
-  console.log("mmm "+ commentBtns);
-//   commentBtns.addEventListener('click', () => {
-//     alert("hhh");})
-  commentBtns.forEach((button) => {
-    alert("hhh");
-    button.addEventListener('Onclick', () => {
-        alert("hhh");
-    //   createForm(button.id);
-    //   getComments(button.id);
 
-    //   fetch(`${baseURL}${button.id}`)
-    //     .then((response) => response.json())
-    //     .then((json) => {
-    //       modal.classList.add('active');
-    //       document.querySelector('body').classList.add('no-scroll');
-    //       modalImg.setAttribute('src', json.meals[0].strMealThumb);
-    //       modalTitle.innerHTML = json.meals[0].strMeal;
-    //       modalRecipe.innerHTML = json.meals[0].strInstructions;
-    //     });
+  commentBtns.forEach((button) => {
+    button.addEventListener('click', () => {
+      createForm(button.id);
+      getComments(button.id);
+
+      fetch(`${baseURL}${button.id}`)
+        .then((response) => response.json())
+        .then((json) => {
+          modal.classList.add('active');
+          document.querySelector('body').classList.add('no-scroll');
+          modalImg.setAttribute('src', json.meals[0].strMealThumb);
+          modalTitle.innerHTML = json.meals[0].strMeal;
+          modalRecipe.innerHTML = json.meals[0].strInstructions;
+        });
     });
   });
 

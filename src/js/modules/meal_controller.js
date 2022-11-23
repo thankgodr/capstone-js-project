@@ -117,6 +117,10 @@ export default class MealController {
       commentBtn.appendChild(document.createTextNode('Comment'));
       commentBtn.className = 'btn btn-primary comments-btn';
       commentBtn.setAttribute('id', meal.idMeal);
+      commentBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        displayPopup()
+      });
       commentBtnHlder.appendChild(commentBtn);
       butttonHolderDiv.appendChild(commentBtnHlder);
       singleMealCardView.appendChild(butttonHolderDiv);
@@ -145,9 +149,6 @@ export default class MealController {
     return curr;
   }
 
-  getComments(id) {
-    displayPopup();
-  }
 }
 
 // displayPopup();
