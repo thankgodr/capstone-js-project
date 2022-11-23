@@ -18,6 +18,16 @@ import '@fortawesome/fontawesome-free/js/brands';
 import '../css/style.css';
 
 import MealController from './modules/meal_controller';
+import displayPopup from '../js/modules/popup';
 
 const mealController = new MealController();
 mealController.printAllMeals(document.getElementById('meals'));
+const getData = () => {
+    displayPopup();
+  };
+  
+  const display = async () => {
+    await getData();
+  };
+  
+  display();

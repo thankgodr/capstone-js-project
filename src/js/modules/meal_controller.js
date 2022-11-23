@@ -99,7 +99,7 @@ export default class MealController {
       commentBtnHlder.className = 'col-12 text-center';
       const commentBtn = document.createElement('button');
       commentBtn.appendChild(document.createTextNode('Comment'));
-      commentBtn.className = 'btn btn-primary';
+      commentBtn.className = 'btn btn-primary comments-btn';
       commentBtnHlder.appendChild(commentBtn);
       butttonHolderDiv.appendChild(commentBtnHlder);
 
