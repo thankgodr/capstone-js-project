@@ -5,7 +5,7 @@ import 'isomorphic-fetch';// eslint-disable-line
 // Mockng local storage
 global.localStorage = {
   state: {
-    gameKey: '9JcQwe8YeiV9ciPMfpK9',
+    gameKey: process.env.APP_ID,
   },
 
   setItem(key, item) {

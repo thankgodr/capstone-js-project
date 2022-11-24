@@ -13,7 +13,6 @@
     "url": "git+https://github.com/thankgodr/capstone-js-project.git"
   },
   "keywords": [],
-  
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -26,6 +25,7 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^29.3.1",
     "css-loader": "^6.3.0",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.26.0",
