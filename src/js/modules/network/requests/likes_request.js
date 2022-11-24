@@ -5,7 +5,7 @@ export default class LikesRequest {
 
     #path;
 
-    constructor(gammeID = '9JcQwe8YeiV9ciPMfpK9') {
+    constructor(gammeID = process.env.APP_ID) {
       this.#networRequest = new NetWorkRequest();
       this.#path = `apps/${gammeID}/likes`;
     }

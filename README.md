@@ -156,6 +156,8 @@ Install this project with:
 
 ### Usage
 
+Create a file at the root level called .env and add APP_ID=[YOU_APP_ID]. [Click here](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) to learn how to get [YOU_APP_ID]
+
 To run the project, execute the following command:
 
 

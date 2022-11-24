@@ -1,7 +1,7 @@
 import commentsCounter from './comment_counter';
 
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-const appID = '9JcQwe8YeiV9ciPMfpK9';
+const appID = process.env.APP_ID;
 
 const commentsHeader = document.querySelector('.comments-container h4');
 const spinner = document.querySelector('#comments-spinner');
