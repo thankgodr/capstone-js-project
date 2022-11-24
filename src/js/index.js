@@ -20,6 +20,7 @@ import '../css/style.css';
 import MealController from './modules/meal_controller';
 import CreateGameRequest from './modules/network/requests/create_game_request';
 import GetMeals from './modules/network/requests/get_meal_request';
+import CounterController from './modules/counter_controller';
 
 const gameId = localStorage.getItem('involvementApiGameId');
 
@@ -32,11 +33,13 @@ if (gameId === undefined) {
 }
 
 new GetMeals().fetch().then((result) => {
-  // Update the homePage Counter
-  document.getElementById('counter').innerHTML = `(${result.meals.length})`;
-
   const mealController = new MealController(result.meals);
   mealController.getLikes(() => {
+    // Print the meals to screen
     mealController.printAllMeals(document.getElementById('meals'));
+
+    // Update the homePage Counter
+    const countController = new CounterController();
+    document.getElementById('counter').innerHTML = `(${countController.countChildren(document.getElementById('meals'), 'card')})`;
   });
 });
