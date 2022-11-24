@@ -38,4 +38,4 @@ const postComment = async (username, comment, id) => {
   });
 };
 
-export { postComment, getComments};
+export { postComment, getComments };

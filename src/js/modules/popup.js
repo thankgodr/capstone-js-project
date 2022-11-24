@@ -7,7 +7,6 @@ const modalRecipe = document.querySelector('.recipe');
 const closeBtn = document.querySelector('.close-btn');
 const formContainer = document.querySelector('.add-comment');
 
-
 const baseURL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 
 const createForm = (id) => {
