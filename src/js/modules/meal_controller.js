@@ -119,7 +119,7 @@ export default class MealController {
       commentBtn.setAttribute('id', meal.idMeal);
       commentBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        displayPopup()
+        displayPopup();
       });
       commentBtnHlder.appendChild(commentBtn);
       butttonHolderDiv.appendChild(commentBtnHlder);
@@ -148,5 +148,4 @@ export default class MealController {
     }
     return curr;
   }
-
 }

@@ -1,6 +1,6 @@
 import CreateGameRequest from '../modules/network/requests/create_game_request';
 import LikesRequest from '../modules/network/requests/likes_request';
-import 'isomorphic-fetch';
+import 'isomorphic-fetch';// eslint-disable-line
 
 // Mockng local storage
 global.localStorage = {

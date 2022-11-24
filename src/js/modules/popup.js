@@ -11,7 +11,6 @@ const displayPopup = () => {
 
   commentBtns.forEach((button) => {
     button.addEventListener('click', () => {
-
       fetch(`${baseURL}${button.id}`)
         .then((response) => response.json())
         .then((json) => {

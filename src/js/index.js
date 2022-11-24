@@ -39,5 +39,4 @@ new GetMeals().fetch().then((result) => {
   mealController.getLikes(() => {
     mealController.printAllMeals(document.getElementById('meals'));
   });
-  
 });
