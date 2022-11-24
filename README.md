@@ -45,7 +45,7 @@
 
 > Available on the link beloow.
 
-- [Live Demo Link](https://thangodr.github.io/capstone-js-project)
+- [Live Demo Link](https://thankgodr.github.io/capstone-js-project/dist/)
 
 <!-- GETTING STARTED -->
 
