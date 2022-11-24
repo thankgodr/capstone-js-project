@@ -45,7 +45,7 @@
 
 > Available on the link beloow.
 
-- [Live Demo Link](https://thangodr.github.io/capstone-js-project)
+- [Live Demo Link](https://thangodr.github.io/capstone-js-project/dist/)
 
 <!-- GETTING STARTED -->
 
@@ -54,11 +54,14 @@
 > To get started with this project, please make sure you have node and node package manager ready on your computer before the next step.
 
 1. Clone this repository
+
 2. run npm install
 ```sh
 npm install
 ```
-3. Run either npm start to open the dev server or npm build to build the application into the dist folder.
+3. Create a file at the root level called .env and add APP_ID=[YOU_APP_ID]. [Click here](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) to learn how to get [YOU_APP_ID]
+
+4. Run either npm start to open the dev server or npm build to build the application into the dist folder.
 ```sh
 npm start
 ```
@@ -74,9 +77,6 @@ To run tests, run the following command:
 ```sh
 npm test
 ```
---->
-
-
 
 <!-- AUTHORS -->
 
