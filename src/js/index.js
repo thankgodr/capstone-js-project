@@ -20,7 +20,6 @@ import '../css/style.css';
 import MealController from './modules/meal_controller';
 import CreateGameRequest from './modules/network/requests/create_game_request';
 import GetMeals from './modules/network/requests/get_meal_request';
-import displayPopup from './modules/popup';
 
 const gameId = localStorage.getItem('involvementApiGameId');
 
@@ -42,17 +41,3 @@ new GetMeals().fetch().then((result) => {
   });
   
 });
-// mealController.getComments(() => {
-
-//   });
-
-const getData = () => {
-    displayPopup();
-  };
-  
-  const display = async () => {
-    await getData();
-  };
-  
-  display();
-  

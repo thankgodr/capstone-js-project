@@ -150,8 +150,3 @@ export default class MealController {
   }
 
 }
-
-// displayPopup();
-// const commentBt = document.querySelectorAll('.comments-btn');
-// console.log(commentBt)
-// commentBt.addEventListener('click', displayPopup);
