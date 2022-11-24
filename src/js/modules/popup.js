@@ -14,9 +14,10 @@ const createForm = (id) => {
   formContainer.innerHTML = '<h4> Add a comment</h4>';
   const form = document.createElement('form');
   form.id = id;
-  form.innerHTML = `<input type="text" placeholder="Your Name" id="name" required>
-          <input type="text" placeholder="Write your comment" id="comment" required>
-          <input type="submit" value="Comment" id="submit-btn">`;
+  form.className = 'form-group text-center';
+  form.innerHTML = `<input type="text" class="form-control form-control-lg mb-2" placeholder="Your Name" id="name" required>
+          <input type="text" class="form-control form-control-lg mb-2" placeholder="Write your comment" id="comment" required>
+          <input type="submit" class="btn btn-primary" value="Comment" id="submit-btn">`;
   formContainer.appendChild(form);
   const name = document.querySelector('#name');
   const comment = document.querySelector('#comment');
