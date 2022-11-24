@@ -18,7 +18,7 @@ const getComments = async (id) => {
       commentsList.innerHTML = '';
       json.forEach((comment) => {
         const newComment = document.createElement('li');
-        newComment.innerHTML = `<span class="date">${comment.creation_date}</span><span class="name">${comment.username}:</span> <span
+        newComment.innerHTML = `<span class="date">${comment.creation_date}</span><span class="name name-text">${comment.username}:</span> <span
               class="comment-text">${comment.comment}</span>`;
         commentsList.appendChild(newComment);
       });
