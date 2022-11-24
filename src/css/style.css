@@ -154,6 +154,35 @@ header {
   width: 500px;
 }
 
+.add-comment form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.add-comment form input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.add-comment form input:focus {
+  outline: 2px solid #ced4da;
+}
+
+#submit-btn {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#submit-btn:hover {
+  background-color: #4d9aff;
+  border: none;
+}
+
 footer {
   font-weight: 400;
   padding: 1rem 0;
