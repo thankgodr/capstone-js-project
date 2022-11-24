@@ -1,4 +1,5 @@
 import LikesRequest from './network/requests/likes_request';
+import displayPopup from './popup';
 
 /**
  * @author ThankGod Richard
@@ -114,10 +115,14 @@ export default class MealController {
       commentBtnHlder.className = 'col-12 text-center mb-4';
       const commentBtn = document.createElement('button');
       commentBtn.appendChild(document.createTextNode('Comment'));
-      commentBtn.className = 'btn btn-primary';
+      commentBtn.className = 'btn btn-primary comments-btn';
+      commentBtn.setAttribute('id', meal.idMeal);
+      commentBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        displayPopup();
+      });
       commentBtnHlder.appendChild(commentBtn);
       butttonHolderDiv.appendChild(commentBtnHlder);
-
       singleMealCardView.appendChild(butttonHolderDiv);
       /** ********************End of Meal Buttons  **************** */
 
