@@ -11,7 +11,6 @@ const getComments = async (id) => {
     .then((reponse) => reponse.json())
     .then((json) => {
       spinner.innerHTML = '';
-      commentsCounter(json, commentsHeader);
       const commentsList = document.querySelector('.comment');
       commentsList.innerHTML = '';
       json.forEach((comment) => {
@@ -39,11 +38,4 @@ const postComment = async (username, comment, id) => {
   });
 };
 
-const commentsCounter = (data, link) => {
-    if (data.length) {
-      link.innerHTML = `Comments (${data.length})`;
-    }
-    return data.length;
-};
-
-export { postComment, getComments, commentsCounter};
+export { postComment, getComments};
