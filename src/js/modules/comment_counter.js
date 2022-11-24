@@ -1,8 +1,8 @@
 const commentsCounter = (data, link) => {
-    if (data.length) {
-        link.innerHTML = `Comments (${data.length})`;
-    }
-    return data.length;
+  if (data.length) {
+    link.innerHTML = `Comments (${data.length})`;
+  }
+  return data.length;
 };
 
-export {commentsCounter};
+export default commentsCounter;
