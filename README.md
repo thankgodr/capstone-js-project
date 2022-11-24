@@ -7,7 +7,7 @@
   <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Javascript Capstone Project</b></h3>
+  <h3>Javascript Capstone Project</h3>
 
 </div>
 
@@ -38,8 +38,6 @@
 - **Babel**
 - **Bootsrap**
 - **Font Awesome**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
