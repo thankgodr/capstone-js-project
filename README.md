@@ -56,14 +56,14 @@
 1. Clone this repository
 2. run npm install
 ```sh
- capstone-js-project % npm install
+npm install
 ```
 3. Run either npm start to open the dev server or npm build to build the application into the dist folder.
 ```sh
-capstone-js-project % npm start
+npm start
 ```
 ```sh
-capstone-js-project % npm biuld
+npm biuld
 ```
 
 ### Run tests
@@ -72,7 +72,7 @@ To run tests, run the following command:
 
 
 ```sh
-  capstone-js-project % npm test
+npm test
 ```
 --->
 
