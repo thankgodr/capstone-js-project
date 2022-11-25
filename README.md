@@ -113,6 +113,7 @@ After you're finished please remove all the comments and instructions!
 
 
 - [Live Demo Link](https://thankgodr.github.io/capstone-js-project/dist/)
+- [Kanban board](https://github.com/thankgodr/capstone-js-project/projects/1)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -197,6 +198,7 @@ npm run build
 - GitHub: [@thankgodr](https://github.com/thankgodr)
 - Twitter: [@manueketf](https://twitter.com/madueketf)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/thankgodr)
+- Proudest PR [Pull 27](https://github.com/thankgodr/capstone-js-project/pull/27)
 
 👤 **Khomotso Mkansi**
 
