@@ -27,7 +27,7 @@ After you're finished please remove all the comments and instructions!
   <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Javascript Capstone Project</b></h3>
+  <h3><b>Microverse README Template</b></h3>
 
 </div>
 
@@ -57,42 +57,36 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Javascript Capstone Project] <a name="about-project"></a>
+# 📖 [your_project_name] <a name="about-project"></a>
 
-> This is a simple front end application that fetches and writes data to multiple API. and display fetch data to the UI. 
+> Describe your project in 1 or 2 sentences.
 
-**[Javascript Capstone Project]** is a...
+**[your_project__name]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
+> Describe the tech stack and include only the relevant sections that apply to your project.
 
 <details>
   <summary>Client</summary>
   <ul>
-    <li>Node</li>
-    <li>Webpack</li>
-    <li>Jest</li>
-    <li>Javascript</li>
-    <li>BootStrap</li>
-    <li>font awesome</li>
-    <li>HTML</li>
-    <li>CSS</li>
+    <li><a href="https://reactjs.org/">React.js</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li>Not applicable</li>
+    <li><a href="https://expressjs.com/">Express.js</a></li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li>Not applicable</li>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
 
@@ -100,10 +94,11 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
+> Describe between 1-3 key features of the application.
 
-- **API network calls**
-- **Test**
-- **ES6 and Modularization**
+- **[key_feature_1]**
+- **[key_feature_2]**
+- **[key_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,9 +106,9 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
+> Add a link to your deployed project.
 
-- [Live Demo Link](https://thankgodr.github.io/capstone-js-project/dist/)
-- [Kanban board](https://github.com/thankgodr/capstone-js-project/projects/1)
+- [Live Demo Link](https://yourdeployedapplicationlink.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,69 +116,83 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
+> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
- ## Note: 
- Most of the command here are for mac user
 
-## Node required
+<!--
+Example command:
+
 ```sh
- brew install node
+ gem install rails
 ```
+ -->
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-
+<!--
+Example commands:
 
 ```sh
   cd my-folder
-  git clone https://github.com/thankgodr/capstone-js-project.git
+  git clone git@github.com:myaccount/my-project.git
 ```
+--->
 
 ### Install
 
 Install this project with:
 
+<!--
+Example command:
+
 ```sh
-  cd capstone-js-project.git
-  npm install
+  cd my-project
+  gem install
 ```
+--->
 
 ### Usage
 
-Create a file at the root level called .env and add APP_ID=[YOU_APP_ID]. [Click here](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) to learn how to get [YOU_APP_ID]
-
 To run the project, execute the following command:
 
+<!--
+Example command:
 
 ```sh
-  npm run start
+  rails server
 ```
-
+--->
 
 ### Run tests
 
 To run tests, run the following command:
 
+<!--
+Example command:
 
 ```sh
-npm run test
+  bin/rails test test/models/article_test.rb
 ```
+--->
 
 ### Deployment
 
 You can deploy this project using:
 
+<!--
+Example:
 
 ```sh
-npm run build
+
 ```
+ -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -193,18 +202,17 @@ npm run build
 
 > Mention all of the collaborators of this project.
 
-👤 **ThankGod Richard**
+👤 **Author1**
 
-- GitHub: [@thankgodr](https://github.com/thankgodr)
-- Twitter: [@manueketf](https://twitter.com/madueketf)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/thankgodr)
-- Proudest PR [Pull 27](https://github.com/thankgodr/capstone-js-project/pull/27)
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-👤 **Khomotso Mkansi**
+👤 **Author2**
 
-- GitHub: [@momotsow](https://github.com/momotsow)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/khomotso-prudence-mkansi-aa7794b7)
-
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -212,10 +220,11 @@ npm run build
 
 ## 🔭 Future Features <a name="future-features"></a>
 
+> Describe 1 - 3 features you will add to the project.
 
-- [ ] **Spinner to show when a network call is runing in the background**
-- [ ] **Reservation feature**
-
+- [ ] **[new_feature_1]**
+- [ ] **[new_feature_2]**
+- [ ] **[new_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -233,9 +242,9 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
+> Write a message to encourage readers to support your project
 
-If you like this project, show your support by giving a star to this project
-
+If you like this project...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -243,8 +252,9 @@ If you like this project, show your support by giving a star to this project
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+> Give credit to everyone who inspired your codebase.
 
-I would like to thank all the contributors and code reviewers.
+I would like to thank...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -252,15 +262,15 @@ I would like to thank all the contributors and code reviewers.
 
 ## ❓ FAQ <a name="faq"></a>
 
+> Add at least 2 questions new developers would ask when they decide to use your project.
 
+- **[Question_1]**
 
-- **How can i contribute to this project?**
+  - [Answer_1]
 
-  - Just clone the project and create a pul request with a well detailed feature intended to be added
+- **[Question_2]**
 
-- **Can I add external libraries?**
-
-  - Yes, but it must be license you own the right to or open source library
+  - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
