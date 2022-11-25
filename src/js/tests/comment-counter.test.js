@@ -31,3 +31,15 @@ describe('Testing comments counter', () => {
   // Assert
   test('Number of comments is 3', () => { expect(count).toBe(3); });
 });
+
+describe('Testing comments counter', () => {
+  // Arrange
+  const link = document.createElement('p');
+  const data = [];
+
+  // Act
+  const count = commentsCounter(data, link);
+
+  // Assert
+  test('Number of comments is 0', () => { expect(count).toBe(0); });
+});
